@@ -84,3 +84,19 @@ PostgreSQL DB + local file storage
 ```
 
 The package structure mirrors the HLD so local implementations can later be swapped for Celery, ChromaDB, MinIO, and managed embedding services.
+
+## User Interface
+
+- Video
+
+https://github.com/user-attachments/assets/83cc7544-3622-47be-8ca7-ae886592635e
+
+How to use ?
+- Step 1: Login or register user.
+<img width="1381" height="447" alt="Screenshot 2026-05-26 214953" src="https://github.com/user-attachments/assets/272de4d9-c66c-4dab-8a7d-13818cda39d4" />
+
+Step 2: Upload or drag and drop files, then click on Upload. Once the file status shows Ready, ask any question related to the document content and view the generated results. 
+
+<img width="1905" height="872" alt="Document-AI-UI" src="https://github.com/user-attachments/assets/faa4d0bf-48db-40a4-b7a5-4a727e6f7992" />
+
+
