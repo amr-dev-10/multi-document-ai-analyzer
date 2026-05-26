@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Document Analyzer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="topbar">
+        <div>
+          <h1>AI Document Analyzer</h1>
+          <p>Upload documents, ask questions, and review cited sources.</p>
+        </div>
+        <button id="logoutBtn" class="ghost hidden">Logout</button>
+      </section>
+
+      <section id="authPanel" class="panel auth-grid">
+        <form id="authForm">
+          <h2>Sign in or create account</h2>
+          <label>
+            Email
+            <input id="email" type="email" value="demo@example.com" required />
+          </label>
+          <label>
+            Password
+            <input
+              id="password"
+              type="password"
+              value="password123"
+              minlength="6"
+              required
+            />
+          </label>
+          <div class="actions">
+            <button type="submit" data-mode="login">Login</button>
+            <button type="button" id="registerBtn" class="secondary">
+              Register
+            </button>
+          </div>
+          <p id="authMessage" class="muted"></p>
+        </form>
+        <div class="auth-note">
+          <h2>Local MVP</h2>
+          <p>
+            This app runs with PostgreSQL and local file storage. Add a Groq API
+            key in `.env` for generated answers; without it, answers are
+            extractive from citations.
+          </p>
+        </div>
+      </section>
+
+      <section id="workspace" class="workspace hidden">
+        <aside class="panel sidebar">
+          <h2>Documents</h2>
+          <div id="dropzone" class="dropzone">
+            <input id="fileInput" type="file" multiple />
+            <span id="dropText">
+              Drop files here or click to select
+            </span>
+            <div id="selectedFiles" class="selected-files"></div>
+          </div>
+          <button id="uploadBtn">Upload selected files</button>
+          <div id="documents" class="documents"></div>
+        </aside>
+
+        <section class="panel chat">
+          <div id="messages" class="messages"></div>
+          <form id="chatForm" class="chat-form">
+            <textarea
+              id="question"
+              placeholder="Ask about your uploaded documents..."
+              rows="3"
+              required
+            ></textarea>
+            <button type="submit">Ask</button>
+          </form>
+        </section>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
